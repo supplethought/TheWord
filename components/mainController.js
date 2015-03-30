@@ -4,7 +4,7 @@
 	define([],
         function () {
         	function controller($scope) {
-        	  $scope.message = "Hello!";
+        	  $scope.message = "AngularJS + RequireJS skeleton";
         	}
         	return ['$scope', controller];
         });
