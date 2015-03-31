@@ -9,7 +9,7 @@
         name: 'home',
         url: '/',
         templateUrl: 'content.html',
-              controller: "mainController"
+        controller: "mainController"
       },
       red = {
           name: 'red',

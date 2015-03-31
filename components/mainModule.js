@@ -1,12 +1,13 @@
 (function(define, angular) {
     "use strict";
     define([
-        "components/mainController",
-        "components/stateConfig"
+      "bibleFeed/bibleFeedModule",
+      "components/mainController",
+      "components/stateConfig"
     ],
-        function(mainController, stateConfig){
+        function(bibleFeedModule, mainController, stateConfig){
             var moduleName = "TheWordApp";
-            angular.module(moduleName, ["ui.router"])
+            angular.module(moduleName, ["ui.router", bibleFeedModule])
                 .config(stateConfig)
                 .run(['$state', function ($state) {
                     $state.transitionTo('home');

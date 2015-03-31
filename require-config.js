@@ -9,12 +9,11 @@
             "angular-resource": "js/vendor/angular/angular-resource.min",
             "ui-router": "js/vendor/angular-ui/angular-ui-router.min",
             "ui-bootstrap": "js/vendor/angular-ui/ui-bootstrap-tpls-0.12.1.min",
-            'mainModule': "components/mainModule"
+            'mainModule': "components/mainModule",
+            "bibleFeed": "components/bibleFeed"
+            
         },
         shim: {
-            "angular-route": {
-                deps: ["angular"]
-            },
             "ui-router": {
                 deps: ["angular"]
             },

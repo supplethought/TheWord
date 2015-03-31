@@ -1,12 +1,17 @@
 (function (define) {
-	'use strict';
+	"use strict";
 
 	define([],
         function () {
-        	function controller($scope) {
+        	function controller($scope, bibleFeedFacade) {
         	  $scope.message = "AngularJS + RequireJS skeleton!!!";
+        	  bibleFeedFacade
+        	  .versions1
+        	  .get(function(versions) {
+        	    $scope.versions = versions;
+        	  });
         	}
-        	return ['$scope', controller];
+        	return ["$scope", "bibleFeedFacade", controller];
         });
 
 }(define));
