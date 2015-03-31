@@ -5,9 +5,10 @@
         function () {
         	function controller($scope, bibleFeedFacade) {
         	  $scope.message = "AngularJS + RequireJS skeleton!!!";
-        	  bibleFeedFacade
-        	  .versions1
-        	  .get(function(versions) {
+        	  
+        	 	bibleFeedFacade
+        	  .versions
+        	  .list(function(versions) {
         	    $scope.versions = versions;
         	  });
         	}

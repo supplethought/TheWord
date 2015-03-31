@@ -4,7 +4,7 @@
       "bibleFeed/bibleFeedFacade"
       ],
       function(bibleFeedFacade){
-        var moduleName = "bibleFeed";
+        var moduleName = "bibleFeed.module";
         
         angular
         .module(moduleName, ["ngResource"])
