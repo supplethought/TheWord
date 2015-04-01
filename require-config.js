@@ -9,7 +9,9 @@
             "angular-resource": "js/vendor/angular/angular-resource.min",
             "ui-router": "js/vendor/angular-ui/angular-ui-router.min",
             "ui-bootstrap": "js/vendor/angular-ui/ui-bootstrap-tpls-0.12.1.min",
-            "mainModule": "components/mainModule",
+            "startupModule": "components/theWord/theWordModule",
+            
+            "theWord": "components/theWord",
             "bibleFeed": "components/bibleFeed",
             "auth":"components/auth"
             
@@ -25,12 +27,12 @@
             "angular-resource": {
                 deps: ["angular"]
             },
-            "mainModule": {
+            "startupModule": {
                 deps: ["angular", "angular-resource", "ui-router", "ui-bootstrap"]
             }
         }
     });
-    require(["mainModule"], function () {
+    require(["startupModule"], function () {
 
     });
 }(require));
