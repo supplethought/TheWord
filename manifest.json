@@ -17,6 +17,7 @@
     }
   },
   "permissions": [
-    "https://*.bibles.org/"
+    "https://*.bibles.org/",
+    "http://www.openbible.info/*"
   ]
 }

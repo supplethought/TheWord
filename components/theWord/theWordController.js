@@ -3,16 +3,22 @@
 
 	define([],
         function () {
-        	function controller($scope, bibleFeedFacade) {
+        	function controller($scope, crossReferenceAdapter) {
         	  $scope.message = "AngularJS + RequireJS skeleton!!!";
         	  
-        	 	bibleFeedFacade
-        	  .versions
+        	  crossReferenceAdapter
+        	  .getCrossReference("Proverbs+3:5")
+        	  .then(function(crossReferences) {
+        	    $scope.versions = crossReferences;
+        	    
+        	  });
+        	  
+        	 	/*bibleFeedFacade.versions
         	  .list(function(versions) {
         	    $scope.versions = versions;
-        	  });
+        	  });*/
         	}
-        	return ["$scope", "bibleFeedFacade", controller];
+        	return ["$scope", "crossReferenceAdapter", controller];
         });
 
 }(define));
