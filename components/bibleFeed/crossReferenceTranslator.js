@@ -7,22 +7,29 @@
         	   function tryTranslate(data){
         	     var doc = document.implementation.createHTMLDocument("CrossReference");
         	     doc.documentElement.innerHTML = data;
-        	     var crossrefsElements = doc
-        	     .getElementsByClassName("crossrefs")[0]
-        	     .getElementsByTagName("div");
+        	     var crossrefsElement = doc.getElementsByClassName("crossrefs")[0];
         	     
-        	     var crossrefsElementsArray = Array.prototype.slice.call(crossrefsElements);
-        	     var refs = crossrefsElementsArray.map(
-        	       function(current){
-        	         return current.getElementsByTagName("h3")[0].innerText;
-        	         
-        	       });
+        	      var result = {
+          	       success:false,
+          	       result:undefined
+          	     };
         	     
-        	     var result = {
-        	       success:true,
-        	       result:refs
-        	     };
+        	     if(crossrefsElement !== undefined){
         	     
+          	     var refElements = crossrefsElement.getElementsByTagName("div");
+          	     
+          	     var crossrefsElementsArray = Array.prototype.slice.call(refElements);
+          	     var refs = crossrefsElementsArray.map(
+          	       function(current){
+          	         return current.getElementsByTagName("h3")[0].innerText;
+          	         
+          	       });
+          	     
+          	     result = {
+          	       success:true,
+          	       result:refs.slice(1)
+          	     };
+        	     }
         	     return result;
         	   }
         	   
