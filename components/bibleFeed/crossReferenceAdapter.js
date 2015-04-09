@@ -11,7 +11,7 @@
         	    crossReferenceFacade
         	    .crossReference(verse)
         	    .then(function (response) {
-        	      var result = crossReferenceTranslator.translate(response.data);
+        	      var result = crossReferenceTranslator.tryTranslate(response.data);
         	      delay.resolve(result);
         	      
         	    }

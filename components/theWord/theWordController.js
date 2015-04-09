@@ -7,7 +7,7 @@
         	  $scope.message = "AngularJS + RequireJS skeleton!!!";
         	  
         	  crossReferenceAdapter
-        	  .getCrossReference("Proverbs 3:5")
+        	  .getCrossReference("Genesis 1:4")
         	  .then(function(crossReferences) {
         	    $scope.versions = crossReferences;
         	    
