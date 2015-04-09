@@ -1,4 +1,4 @@
-// Constructor.
+
 function Interface(name, methods) {
   if(arguments.length != 2) {
     throw new Error("Interface constructor called with " + arguments.length + "arguments, but expected exactly 2.");
@@ -17,7 +17,6 @@ function Interface(name, methods) {
   
 }
 
-// Static class method.
 function ensureImplements(object) {
   if(arguments.length < 2) {
     throw new Error("Function Interface.ensureImplements called with " + arguments.length + "arguments, but expected at least 2.");
