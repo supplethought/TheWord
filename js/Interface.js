@@ -7,7 +7,7 @@ function Interface(name, methods) {
   this.name = name;
   this.methods = [];
   for(var i = 0, len = methods.length; i < len; i++) {
-    if(typeof methods[i] !== 'string') {
+    if(typeof methods[i] !== "string") {
       throw new Error("Interface constructor expects method names to be " + "passed in as a string.");
       
     }
@@ -31,7 +31,7 @@ function ensureImplements(object) {
     }
     for(var j = 0, methodsLen = interface.methods.length; j < methodsLen; j++) {
       var method = interface.methods[j];
-      if(!object[method] || typeof object[method] !== 'function') {
+      if(!object[method] || typeof object[method] !== "function") {
         throw new Error("Function Interface.ensureImplements: object " + "does not implement the " + interface.name + " interface. Method " + method + " was not found.");
         
       }
