@@ -3,22 +3,26 @@
 
 	define([],
         function () {
-        	function controller($scope, crossReferenceAdapter) {
+        	function controller($scope, bibleFeedAdapter) {
         	  $scope.message = "AngularJS + RequireJS skeleton!!!";
         	  
-        	  crossReferenceAdapter
+        	  /*crossReferenceAdapter
         	  .getCrossReference("Gen 1:2")
         	  .then(function(crossReferences) {
         	    $scope.versions = crossReferences;
         	    
-        	  });
-        	  
-        	 	/*bibleFeedFacade.versions
-        	  .list(function(versions) {
-        	    $scope.versions = versions;
         	  });*/
+        	  
+        	 	bibleFeedAdapter
+        	 	.getBooks("eng-ESV")
+        	 	.then(
+        	 	  function(version) {
+        	 	    $scope.versions = version;
+        	 	    
+        	 	  }
+        	 	);
         	}
-        	return ["$scope", "crossReferenceAdapter", controller];
+        	return ["$scope", "bibleFeedAdapter", controller];
         });
 
 }(define));

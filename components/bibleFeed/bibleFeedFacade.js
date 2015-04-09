@@ -11,7 +11,13 @@
         	      headers: {"Authorization": "Basic M1JZVHpaTTNtaWdlaERLMjU3YVVMTEEwMXhjbmxZOFJCVWxTTFpjaDpY"}
         	    }
         	  });
-        	  var booksResource = $resource(baseUri + "/:versionId/books.js",  {versionId:'@id'});
+        	  var booksResource = $resource(baseUri + "/versions/:versionId/books.js",  {versionId:"@versionId"},{
+        	    list:{
+        	      method: "GET",
+        	      headers: {"Authorization": "Basic M1JZVHpaTTNtaWdlaERLMjU3YVVMTEEwMXhjbmxZOFJCVWxTTFpjaDpY"}
+        	    }
+
+        	  });
         	   return {
         	    versions : versionsResource,
         	    books : booksResource
