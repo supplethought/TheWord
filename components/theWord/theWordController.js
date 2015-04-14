@@ -3,16 +3,8 @@
 
 	define([],
         function () {
-        	function controller($scope, bibleFeedAdapter, user) {
+        	function controller($scope, bibleFeedAdapter, version) {
         	  $scope.message = "AngularJS + RequireJS skeleton!!!";
-        	  
-        	  /*crossReferenceAdapter
-        	  .getCrossReference("Gen 1:2")
-        	  .then(function(crossReferences) {
-        	    $scope.versions = crossReferences;
-        	    
-        	  });*/
-        	  
         	  
         	 	bibleFeedAdapter
         	 	.getBooks("eng-ESV")
@@ -23,7 +15,7 @@
         	 	  }
         	 	);
         	}
-        	return ["$scope", "bibleFeedAdapter", "user", controller];
+        	return ["$scope", "bibleFeedAdapter", "version", controller];
         });
 
 }(define));
