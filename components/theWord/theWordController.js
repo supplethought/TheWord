@@ -1,21 +1,20 @@
 (function (define) {
-	"use strict";
+    "use strict";
 
-	define([],
+    define([],
         function () {
-        	function controller($scope, bibleFeedAdapter, version) {
-        	  $scope.message = "AngularJS + RequireJS skeleton!!!";
-        	  
-        	 	bibleFeedAdapter
-        	 	.getBooks("eng-ESV")
-        	 	.then(
-        	 	  function(version) {
-        	 	    $scope.versions = version;
-        	 	    
-        	 	  }
-        	 	);
-        	}
-        	return ["$scope", "bibleFeedAdapter", "version", controller];
+            function controller($scope, bibleFeedAdapter, version) {
+                $scope.message = "AngularJS + RequireJS skeleton!!!";
+                function callback(bibleVersion) {
+                    $scope.versions = bibleVersion;
+
+                }
+                bibleFeedAdapter
+                    .getBooks("eng-ESV")
+                    .then(callback(version));
+            }
+
+            return ["$scope", "bibleFeedAdapter", "version", controller];
         });
 
 }(define));
