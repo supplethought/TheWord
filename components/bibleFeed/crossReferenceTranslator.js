@@ -1,43 +1,44 @@
-(function (define) {
-	"use strict";
+(function (define, document) {
+    "use strict";
 
-	define([],
+    define([],
         function () {
-        	function crossReferenceTranslator() {
-        	   function tryTranslate(data){
-        	     var doc = document.implementation.createHTMLDocument("CrossReference");
-        	     doc.documentElement.innerHTML = data;
-        	     var crossrefsElement = doc.getElementsByClassName("crossrefs")[0];
-        	     
-        	      var result = {
-          	       success:false,
-          	       result:undefined
-          	     };
-        	     
-        	     if(crossrefsElement !== undefined){
-        	     
-          	     var refElements = crossrefsElement.getElementsByTagName("div");
-          	     
-          	     var crossrefsElementsArray = Array.prototype.slice.call(refElements);
-          	     var refs = crossrefsElementsArray.map(
-          	       function(current){
-          	         return current.getElementsByTagName("h3")[0].innerText;
-          	         
-          	       });
-          	     
-          	     result = {
-          	       success:true,
-          	       result:refs.slice(1)
-          	     };
-        	     }
-        	     return result;
-        	   }
-        	   
-        	   return {
-        	    tryTranslate : tryTranslate
-        	  };
-        	}
-        	return crossReferenceTranslator;
+            function crossReferenceTranslator() {
+                function tryTranslate(data) {
+                    var doc = document.implementation.createHTMLDocument("CrossReference"),
+                        crossrefsElement = doc.getElementsByClassName("crossrefs")[0],
+                        result = {
+                            success: false,
+                            result: undefined
+                        },
+                        refElements,
+                        crossrefsElementsArray,
+                        refs;
+                    doc.documentElement.innerHTML = data;
+                    if (crossrefsElement) {
+
+                        refElements = crossrefsElement.getElementsByTagName("div");
+                        crossrefsElementsArray = Array.prototype.slice.call(refElements);
+                        refs = crossrefsElementsArray.map(
+                            function (current) {
+                                return current.getElementsByTagName("h3")[0].innerText;
+                            }
+                        );
+
+                        result = {
+                            success: true,
+                            result: refs.slice(1)
+                        };
+                    }
+                    return result;
+                }
+
+                return {
+                    tryTranslate: tryTranslate
+                };
+            }
+
+            return crossReferenceTranslator;
         });
 
-}(define));
+}(define, document));

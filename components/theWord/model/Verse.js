@@ -1,13 +1,14 @@
 (function (define) {
-	"use strict";
+    "use strict";
 
-	define([],
+    define([],
         function () {
-        	function verse() {
-        	  
-        	}
-        	return verse;
-          
+            function verse() {
+
+            }
+
+            return verse;
+
         });
-  
+
 }(define));

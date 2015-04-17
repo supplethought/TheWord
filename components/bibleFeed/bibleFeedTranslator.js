@@ -1,21 +1,22 @@
 (function (define) {
-	"use strict";
+    "use strict";
 
-	define([],
+    define([],
         function () {
-        	function bibleFeedTranslator() {
-        	   function tryTranslate(data){
-        	      var result = {
-          	       success:true,
-          	       result:data
-          	     };
-          	     return result;
-        	   }
-        	   return {
-        	     tryTranslate : tryTranslate
-        	  };
-        	}
-        	return bibleFeedTranslator;
+            function bibleFeedTranslator() {
+                function tryTranslate(data) {
+                    return {
+                        success: true,
+                        result: data
+                    };
+                }
+
+                return {
+                    tryTranslate: tryTranslate
+                };
+            }
+
+            return bibleFeedTranslator;
         });
 
 }(define));
