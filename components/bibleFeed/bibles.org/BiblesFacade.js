@@ -3,7 +3,7 @@
 
     define([],
         function () {
-            function bibleFeedFacade($resource) {
+            function biblesFacade($resource) {
                 var baseUri = "https://bibles.org/v2",
                     versionsResource = $resource(baseUri + "/versions.js", null, {
                         list: {
@@ -23,7 +23,7 @@
                 };
             }
 
-            return ["$resource", bibleFeedFacade];
+            return ["$resource", biblesFacade];
         });
 
 }(define));

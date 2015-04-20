@@ -2,26 +2,40 @@
     "use strict";
     define(
         [
-            "bibleFeed/bibleFeedFacade",
-            "bibleFeed/bibleFeedAdapter",
-            "bibleFeed/bibleFeedTranslator",
+            "bibleFeed/bibles.org/BiblesFacade",
+            "bibleFeed/bibles.org/BiblesAdapter",
+            "bibleFeed/bibles.org/BiblesTranslator",
             "bibleFeed/crossReferenceFacade",
             "bibleFeed/crossReferenceAdapter",
             "bibleFeed/crossReferenceTranslator",
-            "bibleFeed/BibleGatewayFacade"
+            "bibleFeed/biblegateway.com/BibleGatewayFacade",
+            "bibleFeed/biblegateway.com/BibleGatewayAdapter",
+            "bibleFeed/biblegateway.com/BibleGatewayTranslator"
         ],
-        function (bibleFeedFacade, bibleFeedAdapter, bibleFeedTranslator, crossReferenceFacade, crossReferenceAdapter, crossReferenceTranslator, bibleGatewayFacade) {
+        function (
+            biblesFacade,
+            biblesAdapter,
+            biblesTranslator,
+            crossReferenceFacade,
+            crossReferenceAdapter,
+            crossReferenceTranslator,
+            bibleGatewayFacade,
+            bibleGatewayAdapter,
+            bibleGatewayTranslator
+        ) {
             var moduleName = "bibleFeed.module";
 
             angular
                 .module(moduleName, ["ngResource"])
-                .service("bibleFeedFacade", bibleFeedFacade)
-                .service("bibleFeedAdapter", bibleFeedAdapter)
-                .service("bibleFeedTranslator", bibleFeedTranslator)
+                .service("biblesFacade", biblesFacade)
+                .service("biblesAdapter", biblesAdapter)
+                .service("biblesTranslator", biblesTranslator)
                 .service("crossReferenceFacade", crossReferenceFacade)
                 .service("crossReferenceAdapter", crossReferenceAdapter)
                 .service("crossReferenceTranslator", crossReferenceTranslator)
-                .service("bibleGatewayFacade", bibleGatewayFacade);
+                .service("bibleGatewayFacade", bibleGatewayFacade)
+                .service("bibleGatewayAdapter", bibleGatewayAdapter)
+                .service("bibleGatewayTranslator", bibleGatewayTranslator);
 
             return moduleName;
 

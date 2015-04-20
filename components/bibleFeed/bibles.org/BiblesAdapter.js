@@ -3,17 +3,17 @@
 
     define([],
         function () {
-            function bibleFeedAdapter($q, bibleFeedFacade, bibleFeedTranslator) {
+            function biblesAdapter($q, biblesFacade, biblesTranslator) {
 
                 function getBooks(versionId) {
                     var delay = $q.defer();
 
-                    bibleFeedFacade
+                    biblesFacade
                         .books
                         .list({versionId: versionId})
                         .$promise
                         .then(function (data) {
-                            var result = bibleFeedTranslator.tryTranslate(data.response);
+                            var result = biblesTranslator.tryTranslate(data.response);
                             delay.resolve(result);
                         });
                     return delay.promise;
@@ -25,7 +25,7 @@
                 };
             }
 
-            return ["$q", "bibleFeedFacade", "bibleFeedTranslator", bibleFeedAdapter];
+            return ["$q", "biblesFacade", "biblesTranslator", biblesAdapter];
 
         });
 
