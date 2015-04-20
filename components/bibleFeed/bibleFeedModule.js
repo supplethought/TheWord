@@ -7,9 +7,10 @@
             "bibleFeed/bibleFeedTranslator",
             "bibleFeed/crossReferenceFacade",
             "bibleFeed/crossReferenceAdapter",
-            "bibleFeed/crossReferenceTranslator"
+            "bibleFeed/crossReferenceTranslator",
+            "bibleFeed/BibleGatewayFacade"
         ],
-        function (bibleFeedFacade, bibleFeedAdapter, bibleFeedTranslator, crossReferenceFacade, crossReferenceAdapter, crossReferenceTranslator) {
+        function (bibleFeedFacade, bibleFeedAdapter, bibleFeedTranslator, crossReferenceFacade, crossReferenceAdapter, crossReferenceTranslator, bibleGatewayFacade) {
             var moduleName = "bibleFeed.module";
 
             angular
@@ -19,7 +20,8 @@
                 .service("bibleFeedTranslator", bibleFeedTranslator)
                 .service("crossReferenceFacade", crossReferenceFacade)
                 .service("crossReferenceAdapter", crossReferenceAdapter)
-                .service("crossReferenceTranslator", crossReferenceTranslator);
+                .service("crossReferenceTranslator", crossReferenceTranslator)
+                .service("bibleGatewayFacade", bibleGatewayFacade);
 
             return moduleName;
 
