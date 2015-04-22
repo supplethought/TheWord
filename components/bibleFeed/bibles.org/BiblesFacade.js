@@ -16,10 +16,17 @@
                             method: "GET",
                             headers: {"Authorization": "Basic M1JZVHpaTTNtaWdlaERLMjU3YVVMTEEwMXhjbmxZOFJCVWxTTFpjaDpY"}
                         }
+                    }),
+                    chaptersResource = $resource(baseUri + "/books/:bookId/chapters.js", {bookId: "@bookId"}, {
+                        list: {
+                            method: "GET",
+                            headers: {"Authorization": "Basic M1JZVHpaTTNtaWdlaERLMjU3YVVMTEEwMXhjbmxZOFJCVWxTTFpjaDpY"}
+                        }
                     });
                 return {
                     versions: versionsResource,
-                    books: booksResource
+                    books: booksResource,
+                    chapters: chaptersResource
                 };
             }
 
