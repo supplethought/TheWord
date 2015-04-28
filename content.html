@@ -1,2 +1,5 @@
 <b>{{message}}</b>
-{{versions}}
+<br/>
+<label>
+    <select ng-model="selectedBook" ng-options="book as book.name for book in books"></select>
+</label>

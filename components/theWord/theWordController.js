@@ -3,18 +3,17 @@
 
     define([],
         function () {
-            function controller($scope, bibleFeedAdapter, version) {
-                $scope.message = "AngularJS + RequireJS skeleton!!!";
-                function callback(bibleVersion) {
-                    $scope.versions = bibleVersion;
-
-                }
-                bibleFeedAdapter
+            function controller($scope, biblesAdapter) {
+                $scope.message = "The Word";
+                biblesAdapter
                     .getBooks("eng-ESV")
-                    .then(callback(version));
+                    .then(function (data) {
+                        $scope.books = data.result;
+                        $scope.selectedBook = $scope.books[0];
+                    });
             }
 
-            return ["$scope", "bibleFeedAdapter", "version", controller];
+            return ["$scope", "biblesAdapter", controller];
         });
 
 }(define));

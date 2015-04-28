@@ -13,7 +13,7 @@
                         .list({versionId: versionId})
                         .$promise
                         .then(function (data) {
-                            var result = biblesTranslator.tryTranslate(data.response);
+                            var result = biblesTranslator.tryTranslate(data.response, "Book");
                             delay.resolve(result);
                         });
                     return delay.promise;
