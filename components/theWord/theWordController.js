@@ -12,8 +12,12 @@
                         $scope.selectedBook = $scope.books[0];
                     });
                 $scope.status = {
-                    isopen: false
+                    open: false,
+                    open2: false,
+                    isFirstOpen: true,
+                    isFirstDisabled: false
                 };
+                $scope.oneAtATime = true;
                 $scope.toggled = function (open) {
                     $log.log('Dropdown is now: ', open);
                 };

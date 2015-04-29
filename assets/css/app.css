@@ -7,6 +7,13 @@ body {
     font-family: Tahoma, Arial, Verdana;
     overflow: hidden;
 }
+#sideMenu {
+    margin: 7px;
+    padding: 7px;
+    width: 350px;
+    font-family: Tahoma, Arial, Verdana;
+    overflow: hidden;
+}
 
 .dropdown-menu{
     max-height: 300px; /*Provide height in pixels or in other units as per your layout*/
