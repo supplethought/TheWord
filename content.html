@@ -1,5 +1,14 @@
-<b>{{message}}</b>
-<br/>
-<label>
-    <select ng-model="selectedBook" ng-options="book as book.name for book in books"></select>
-</label>
+<div>
+    <b>{{message}}</b>
+    <br/>
+    <div class="btn-group" dropdown is-open="status.isopen">
+        <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+            Choose a book... <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="book in books">
+                <a href="#">{{book.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -3,7 +3,7 @@
 
     define([],
         function () {
-            function controller($scope, biblesAdapter) {
+            function controller($scope, $log, biblesAdapter) {
                 $scope.message = "The Word";
                 biblesAdapter
                     .getBooks("eng-ESV")
@@ -11,9 +11,20 @@
                         $scope.books = data.result;
                         $scope.selectedBook = $scope.books[0];
                     });
+                $scope.status = {
+                    isopen: false
+                };
+                $scope.toggled = function (open) {
+                    $log.log('Dropdown is now: ', open);
+                };
+                $scope.toggleDropdown = function ($event) {
+                    $event.preventDefault();
+                    $event.stopPropagation();
+                    $scope.status.isopen = !$scope.status.isopen;
+                };
             }
 
-            return ["$scope", "biblesAdapter", controller];
+            return ["$scope", "$log", "biblesAdapter", controller];
         });
 
 }(define));

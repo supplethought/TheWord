@@ -1,4 +1,4 @@
-(function(require) {
+(function (require) {
     "use strict";
     require.config({
         appDir: "",
@@ -10,12 +10,12 @@
             "ui-router": "js/vendor/angular-ui/angular-ui-router.min",
             "ui-bootstrap": "js/vendor/angular-ui/ui-bootstrap-tpls-0.12.1.min",
             "startupModule": "components/theWord/theWordModule",
-            
+
             "theWord": "components/theWord",
             "bibleFeed": "components/bibleFeed",
-            "auth":"components/auth"
-            
-            
+            "auth": "components/auth"
+
+
         },
         shim: {
             "ui-router": {

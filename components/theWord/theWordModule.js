@@ -10,7 +10,7 @@
         function (bibleFeedModule, theWordController, theWordStateConfig, theWordModelModule) {
             var moduleName = "theWord.module";
             angular
-                .module(moduleName, ["ui.router", bibleFeedModule, theWordModelModule])
+                .module(moduleName, ["ui.router", "ui.bootstrap", bibleFeedModule, theWordModelModule])
                 .config(theWordStateConfig)
                 .run(['$state', function ($state) {
                     $state.transitionTo('home');
