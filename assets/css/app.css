@@ -14,7 +14,10 @@ body {
     font-family: Tahoma, Arial, Verdana;
     overflow: hidden;
 }
-
+#booksContainer{
+    max-height: 600px;
+    overflow-y: auto;
+}
 .dropdown-menu{
     max-height: 300px; /*Provide height in pixels or in other units as per your layout*/
     overflow-y: auto; /*Provide an auto overflow to diaply scroll*/

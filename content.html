@@ -1,25 +1,23 @@
 <div>
     <div id="sideMenu">
         <accordion close-others="oneAtATime">
-            <accordion-group is-open="status.open">
+            <accordion-group is-open="theWordGroup.open">
                 <accordion-heading>
-                    The Word <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                    {{::theWordGroup.title}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': theWordGroup.open, 'glyphicon-chevron-right': !theWordGroup.open}"></i>
                 </accordion-heading>
-                This is just some content to illustrate fancy headings.
+                <div id="booksContainer">
+                    <accordion close-others="oneAtATime">
+                        <accordion-group heading="{{book.name}}" ng-repeat="book in theWordGroup.content">
+                            {{book.copyright}}
+                        </accordion-group>
+                    </accordion>
+                </div>
             </accordion-group>
-            <accordion-group is-open="status.open2">
+            <accordion-group is-open="readingPlansGroup.open">
                 <accordion-heading>
-                    Reading Plans <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open2, 'glyphicon-chevron-right': !status.open2}"></i>
+                    {{::readingPlansGroup.title}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': readingPlansGroup.open, 'glyphicon-chevron-right': !readingPlansGroup.open}"></i>
                 </accordion-heading>
-                This content is straight in the template.
-            </accordion-group>
-            <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-                {{group.content}}
-            </accordion-group>
-            <accordion-group heading="Dynamic Body Content">
-                <p>The body of the accordion group grows to fit the contents</p>
-                <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
-                <div ng-repeat="item in items">{{item}}</div>
+                {{::readingPlansGroup.content}}
             </accordion-group>
         </accordion>
     </div>
