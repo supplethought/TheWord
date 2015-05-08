@@ -50,3 +50,13 @@ body {
     content: "";
     padding: 0;
 }
+div.bible-chapter {
+    padding: 1px;
+}
+
+div.bible-chapter a {
+    display: block;
+    width: 100%;
+    text-decoration: none; /* No underlines on the link */
+    text-align: center;
+}
