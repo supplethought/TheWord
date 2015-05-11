@@ -20,6 +20,12 @@
                     this.bookGroupId = bookGroupId;
                     this.testamentId = testamentId;
                     this.osis_end = osis_end;
+                    this.chapterNumbers = Array.apply(0, new Array(parseInt(osis_end.split(".")[1], 10)))
+                        .map(
+                            function (currentValue, index) {
+                                return index + 1;
+                            }
+                        );
                 }
 
                 /**

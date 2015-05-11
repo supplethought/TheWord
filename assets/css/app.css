@@ -52,6 +52,8 @@ body {
 }
 div.bible-chapter {
     padding: 1px;
+    margin: -1px 0 0 -1px;
+    border: 1px solid #DDDDDD;
 }
 
 div.bible-chapter a {
