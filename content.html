@@ -1,40 +1,43 @@
-<div>
-    <div id="sideMenu">
-        <accordion close-others="oneAtATime">
-            <accordion-group is-open="theWordGroup.open">
-                <accordion-heading>
-                    {{::theWordGroup.title}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': theWordGroup.open, 'glyphicon-chevron-right': !theWordGroup.open}"></i>
-                </accordion-heading>
-                <div id="booksContainer">
-                    <accordion close-others="oneAtATime">
-                        <accordion-group heading="{{book.name}}" ng-repeat="book in theWordGroup.content">
-                            <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xs-2 bible-chapter" ng-repeat="chapterNumber in book.chapterNumbers" >
-                                    <a href="#">{{chapterNumber}}</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <accordion close-others="oneAtATime">
+                <accordion-group is-open="theWordGroup.open">
+                    <accordion-heading>
+                        {{::theWordGroup.title}} <i class="pull-right glyphicon"
+                                                    ng-class="{'glyphicon-chevron-down': theWordGroup.open, 'glyphicon-chevron-right': !theWordGroup.open}"></i>
+                    </accordion-heading>
+                    <div id="booksContainer">
+                        <accordion close-others="oneAtATime">
+                            <accordion-group heading="{{book.name}}" ng-repeat="book in theWordGroup.content">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-2 bible-chapter"
+                                             ng-repeat="chapterNumber in book.chapterNumbers">
+                                            <a href="#">{{chapterNumber}}</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                        </accordion-group>
-                    </accordion>
-                </div>
-            </accordion-group>
-            <accordion-group is-open="readingPlansGroup.open">
-                <accordion-heading>
-                    {{::readingPlansGroup.title}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': readingPlansGroup.open, 'glyphicon-chevron-right': !readingPlansGroup.open}"></i>
-                </accordion-heading>
-                {{::readingPlansGroup.content}}
-            </accordion-group>
-        </accordion>
-    </div>
-    <div class="btn-group" dropdown is-open="status.isopen">
-        <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-            Choose a book... <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-            <li ng-repeat="book in books">
-                <a href="#">{{book.name}}</a>
-            </li>
-        </ul>
+                            </accordion-group>
+                        </accordion>
+                    </div>
+                </accordion-group>
+                <accordion-group is-open="readingPlansGroup.open">
+                    <accordion-heading>
+                        {{::readingPlansGroup.title}} <i class="pull-right glyphicon"
+                                                         ng-class="{'glyphicon-chevron-down': readingPlansGroup.open, 'glyphicon-chevron-right': !readingPlansGroup.open}"></i>
+                    </accordion-heading>
+                    {{::readingPlansGroup.content}}
+                </accordion-group>
+            </accordion>
+        </div>
+        <div class="col-lg-6">
+            Detail
+            <div ui-view></div>
+        </div>
+        <div class="col-lg-3">
+            Comments
+            <div ui-view></div>
+        </div>
     </div>
 </div>
